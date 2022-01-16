@@ -1,84 +1,42 @@
+# Act1_Servicios Web
 
+En este proyecto se ha creado un servicio web que constará de dos enpoints que persitirá los datos en un fichero en memoria.
 
-# Spring Boot y Servicios REST.
+## Enpoint 1 📋
 
+Este endpoint será el encargado de recibir una cadena de texto del cliente y añadirla a un fichero que persistirá en memoria.
 
-## Requerimiento 1.
+## Enpoint 2 📋
 
-En este proyecto se va a ver como podemos implementar un servicio REST con el Framework de Spring y Spring Boot.
+Este endpoint le permitira al cliente contabilizar cuantas ocurrencias de una palabra hay en el fichero, omitiendo las mayúsculas y los acentos.
 
-### SERVIDOR SUMMUN
+## Construido con  🛠️
 
-Realizaremos un servicio REST que proporcione un servicio CRUD completo, podra ser consumido mediante un cliente como Postman y todo el intercambio de mensajes se realizara a traves de JSON.
+* Intellij IDEA - El IDE utilizado.
+* Postman - Cliente HTTP que nos da la posibilidad de hacer test.
+* Spring Boot - El framework utilizado.
 
-Dicho servicio gestionara una BBDD de videojuegos simulada en memoria. Al arrancar el programa dara de alta 5 entradas preestablecidas y a partir de ahi quedará a la espera de peticiones.
+## Sistemas Operativos💻
 
-### Videojuegos.
+* Windows : Comprobado
+* MacOS : No Comprobado
+* Linux : No Comprobado
 
-Los videojuegos tendrán un ID, un nombre, una compañía y una nota para ello crearemos la clase <b>Game</b>.
+## Restricciones ❗
+Hay algunas validaciones en la aplicación para evitar su mal funcionamiento.
 
-### Peticiones.
+* Omite los acentos a la hora de comparar las palabras en el segundo endpoint.
+* Omite las mayúsculas a la hora de comparar las palabras en segundo endpoint.
+* Si no hay ningún fichero creado lo genera para poder trabajar sobre él.
+* El segundo endpoint no contabilizará dos palabras en una misma cadena de texto.
 
-Nuestro servicio dara respuesta a las siguientes peticiones.
+## Despliegue 📦
+Para iniciar el servidor que recibira las peticiones hay que ejecutar la clase FileServerAplication.
+Si queremos enviarle peticiones al servidor podemos usar postman con las siguientes rutas:
+* http://localhost:12345/file/write?str=your_text con el método POST
+* http://localhost:12345/file/read?str=your_text con el método GET
 
-1. Dar de alta un videojuego.
-2. Dar de baja un videojuego por ID.
-3. Modificar un videojuego por ID.
-4. Obtener un videojuego por ID.
-5. Listar todos los videojuegos.
-
-## Requerimiento 2.
-
-Añadiremos una comprobación tanto al añadir como al modificar para que no nos permita  dar de alta dos videojuegos con el mismo Nombre o ID.
-
-### Poner en marcha la aplicacion (SERVIDOR)
-
-Arrancaremos la aplicacion desde IDE ejecuntando el archivo:
-
-- AE3-RESTSERVICE-SPRINGBOOT/summun/src/main/java/com/summun/launcher/SummunApplication.java 
-
-El servidor utiliza el puerto 8086.
-
-
-### Añadir
-
-Modificaremos nuestro metodo para que recorra el la lista de Videojuegos comparando con cada entrada el Nombre que hemos introducido y nos devolvera un boolean para cada uno de estos casos.
-
-	- El Nombre no existe asi que se realiza la entrada.
-
-	- El Nombre existe y no se realiza la entrada.
-
-
-### Modificar
-
-Modificaremos nuestro metodo para que recorra el la lista de Videojuegos comparando con cada entrada el Nombre que hemos introducido y nos devolvera un String dado que tenemos 3 casos:
-
-	- El ID no existe por lo tanto no se realiza ninguna modificacion.
-
-	- El ID existe pero el nombre introducido ya esta en uso asi que no se modifica.
-
-	- El ID existe y el Nombre no esta en uso asi que se modifica el registro.
-
-
-
-## Requerimiento 3.
-
-Crearemos un segundo proyecto SpringBoot para realizar una aplicación desde la que el cliente podria realizar peticiones al servidor. Para ello crearemos un menu que mostrara por consola las opciones y solicitara la eleccion del usuario de forma numerica.
-
-Cada opcion del menu solicitara los datos necesarios para poder enviar al servidor la solicitud. La clase ServiceProxyGame construira la url que se enviara al servidor para cada petición y de recoger y procesar la respuesta del servidor.
-
-### Menu
-
-Hemos creado un menu algo dinamico simulando que tiene una actitud acida, burlona y con poca paciencia.  Si nos equivocamos varias veces al introducir una eleccion del menú la respuesta se vuelve mas burlona, ( no se ofendan es solo una broma para hacer algo divertido todo este codigo o puede que solo se nos fundiera algun fusible mietras programabamos, diculpen las molestias /smile )
-
-### Poner en marcha la aplicacion (CLIENTE)
-
-Arrancaremos la aplicacion desde IDE ejecuntando el archivo:
-
-- AE3-RESTSERVICE-SPRINGBOOT/gamesClient/src/main/java/com/summun/client/GamesClientApplication.java/
-
-!!! IMPORTANTE ARRANCAR PRIMERO EL SERVIDOR.
-
-El CLIENTE utiliza el puerto 8081.
-
-
+## Autores ✒️
+* Javier Barón Pérez - (https://github.com/jabaron56)
+* Ismael De Gregorio López - (https://github.com/Lufram)
+* Alberto Lozano Gómez - (https://github.com/Tachenko)
