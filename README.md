@@ -2,11 +2,11 @@
 
 En este proyecto se ha creado un servicio web que constará de dos enpoints que persitirá los datos en un fichero en memoria.
 
-## Enpoint 1 📋
+## Endpoint 1 📋
 
 Este endpoint será el encargado de recibir una cadena de texto del cliente y añadirla a un fichero que persistirá en memoria.
 
-## Enpoint 2 📋
+## Endpoint 2 📋
 
 Este endpoint le permitira al cliente contabilizar cuantas ocurrencias de una palabra hay en el fichero, omitiendo las mayúsculas y los acentos.
 
