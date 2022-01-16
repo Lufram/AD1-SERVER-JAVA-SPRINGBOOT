@@ -16,6 +16,12 @@ Este endpoint le permitira al cliente contabilizar cuantas ocurrencias de una pa
 * Postman - Cliente HTTP que nos da la posibilidad de hacer test.
 * Spring Boot - El framework utilizado.
 
+## Sistemas Operativos💻
+
+* Windows : Comprobado
+* MacOS : No Comprobado
+* Linux : No Comprobado
+
 ## Restricciones ❗
 Hay algunas validaciones en la aplicación para evitar su mal funcionamiento.
 
