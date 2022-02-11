@@ -30,8 +30,6 @@ import org.springframework.web.client.HttpClientErrorException;
 			} catch (IOException e) {
 				e.printStackTrace();
 				return new ResponseEntity<>(HttpStatus.NOT_FOUND + ": Fichero no encontrado", HttpStatus.NOT_FOUND);
-			} catch (HttpClientErrorException e) {
-				return new ResponseEntity<>(e.getStatusCode() + ": Error al guardar texto.", e.getStatusCode());
 			}
 		}
 
@@ -62,13 +60,9 @@ import org.springframework.web.client.HttpClientErrorException;
 					data = br.readLine();
 				}
 				return new ResponseEntity<>( HttpStatus.OK + " Numero de coincidencias: " + cont, HttpStatus.OK);
-			} catch (FileNotFoundException e) {
-				return new ResponseEntity<>(HttpStatus.NOT_FOUND + ": Fichero no encontrado", HttpStatus.NOT_FOUND);
 			} catch (IOException e) {
 				e.printStackTrace();
 				return new ResponseEntity<>(HttpStatus.NOT_FOUND + ": Fichero no encontrado", HttpStatus.NOT_FOUND);
-			} catch (HttpClientErrorException e) {
-				return new ResponseEntity<>(e.getStatusCode() + ": Error al guardar.", e.getStatusCode());
 			}
 		}
 
@@ -92,5 +86,15 @@ import org.springframework.web.client.HttpClientErrorException;
 		private static String normalizador(String str)
 		{
 			return Normalizer.normalize(str, Normalizer.Form.NFD).replaceAll("\\p{InCombiningDiacriticalMarks}+", "").replaceAll(" ", "+");
+		}
+
+		public boolean resetFile() {
+			try (FileWriter fw = new FileWriter("data.txt", false);
+				 BufferedWriter pw = new BufferedWriter(fw);) {
+					return true;
+			} catch (IOException e) {
+				e.printStackTrace();
+				return false;
+			}
 		}
 	}
