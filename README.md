@@ -12,8 +12,7 @@ Este endpoint le permitira al cliente contabilizar cuantas ocurrencias de una pa
 
 ## Construido con  🛠️
 
-* Intellij IDEA - El IDE utilizado.
-* Postman - Cliente HTTP que nos da la posibilidad de hacer test.
+* Maven herramienta de gestión y construcción de proyectos.
 * Spring Boot - El framework utilizado.
 
 ## Sistemas Operativos💻
@@ -31,10 +30,18 @@ Hay algunas validaciones en la aplicación para evitar su mal funcionamiento.
 * El segundo endpoint no contabilizará dos palabras en una misma cadena de texto.
 
 ## Despliegue 📦
-Para iniciar el servidor que recibira las peticiones hay que ejecutar la clase FileServerAplication.
+Para iniciar el servicio se debe acceder por medio del ejecutable "ejecutar.bat" que se encuentra independiente de la carpeta de la aplicación.
 Si queremos enviarle peticiones al servidor podemos usar postman con las siguientes rutas:
 * http://localhost:12345/file/write?str=your_text con el método POST
 * http://localhost:12345/file/read?str=your_text con el método GET
+
+## Script 📜
+Para crear el script "ejecutar.bat" hemos seguido los siguientes pasos:
+
+1.Editamos el pom.xml añadiendo "<packaging>jar</packaging>".
+2.Ejecutamos el proyecto en modo Maven Build... y en goals añadimos "clean package" antes de ejecutar.
+3.Ya se nos habrá creado el .jar "client-0.0.1-SNAPSHOT.jar".
+4.Ahora construiremos el ejecutable.bat que apuntará al "client-0.0.1-SNAPSHOT.jar", el cual iniciará el servicio.
 
 ## Autores ✒️
 * Javier Barón Pérez - (https://github.com/jabaron56)
