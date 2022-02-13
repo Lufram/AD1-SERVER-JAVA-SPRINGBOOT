@@ -38,10 +38,10 @@ Si queremos enviarle peticiones al servidor podemos usar postman con las siguien
 ## Script 📜
 Para crear el script "ejecutar.bat" hemos seguido los siguientes pasos:
 
-1.Editamos el pom.xml añadiendo "<packaging>jar</packaging>".
-2.Ejecutamos el proyecto en modo Maven Build... y en goals añadimos "clean package" antes de ejecutar.
-3.Ya se nos habrá creado el .jar "client-0.0.1-SNAPSHOT.jar".
-4.Ahora construiremos el ejecutable.bat que apuntará al "client-0.0.1-SNAPSHOT.jar", el cual iniciará el servicio.
+1. Editamos el pom.xml añadiendo "<packaging>jar</packaging>".
+2. Ejecutamos el proyecto en modo Maven Build... y en goals añadimos "clean package" antes de ejecutar.
+3. Ya se nos habrá creado el .jar "client-0.0.1-SNAPSHOT.jar".
+4. Ahora construiremos el ejecutable.bat que apuntará al "client-0.0.1-SNAPSHOT.jar", el cual iniciará el servicio.
 
 ## Autores ✒️
 * Javier Barón Pérez - (https://github.com/jabaron56)
