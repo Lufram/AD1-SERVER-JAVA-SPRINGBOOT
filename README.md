@@ -35,6 +35,12 @@ Si queremos enviarle peticiones al servidor podemos usar postman con las siguien
 * http://localhost:12345/file/write?str=your_text con el método POST
 * http://localhost:12345/file/read?str=your_text con el método GET
 
+## Testing 📋
+Para comprobar que nuestro código funciona correctamente y sigue haciéndolo en las siguientes
+versiones, hemos creado una batería de test, hemos excluido las clases que inician la aplicación
+ya que todos nuestros métodos están incluidos en la clase FileController.
+ 
+
 ## Script 📜
 Para crear el script "ejecutar.bat" hemos seguido los siguientes pasos:
 
